@@ -1,0 +1,4 @@
+vm.py lib/vdsm/virt/
+hostdev.py lib/vdsm/common/
+xmlparse.py lib/vdsm/common/
+easylog.py lib/vdsm/common/
