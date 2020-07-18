@@ -297,7 +297,7 @@ def _undefine_stale_domain(vm, connection):
                 raise
 
 def get_uuid(arg_vm_name):
-    conf = open('/tmp/vcpu_gpu.conf', 'r')
+    conf = open('/etc/vcpu-vgpu/vcpu-vgpu.dump', 'r')
     line_0 = True
     for line in conf:
         if line_0:
