@@ -346,6 +346,7 @@ class Vm(object):
         vmlog = easylog.easylog('/tmp/vminfo.log', '/tmp/vgpuwarn.log')
 
         self.xmlinfo = xmlparse.simplexmlparser(params['xml'])
+        self.vgpuuuid = None
         if self.xmlinfo.hostdev:
             vmlog.info('{}:{}:{}'.format(self.xmlinfo.vmname, self.xmlinfo.mdev_type, self.xmlinfo.mdev_placement))
             self.vgpuuuid = get_uuid(self.xmlinfo.vmname)
