@@ -6,9 +6,8 @@ import glob
 
 class easylog:
 
-    	def __init__(self, info_file, warn_file):
+    	def __init__(self, info_file):
     	    	self.info_file = open(info_file, 'a+')
-    	    	self.warn_file = open(warn_file, 'a+')
 
     	def info(self, text):
     	    	if self.info_file:
@@ -18,19 +17,9 @@ class easylog:
     	        	self.info_file.write(text)
     	        	self.info_file.write('\n')
 
-    	def warn(self, text):
-		if self.warn_file:
-    	        	time_now = datetime.datetime.now()
-    	        	self.warn_file.write(time_now.strftime('%Y-%m-%d %H:%M:%S'))
-    	        	self.warn_file.write('-----')
-    	        	self.warn_file.write(text)
-    	        	self.warn_file.write('\n')
-
 	def release(self):
 		if self.info_file:
 			self.info_file.close()
-		if self.warn_file:
-			self.warn_file.close()
 
 
 def get_file_size(file_path):

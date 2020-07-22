@@ -342,9 +342,12 @@ class Vm(object):
         :type recover: bool
         """
 
-        vmlog = easylog.easylog('/tmp/vminfo.log', '/tmp/vgpuwarn.log')
+        
 
         self.xmlinfo = xmlparse.simplexmlparser(params['xml'])
+        
+        vmlog = easylog.easylog('/tmp/{}.log'.format(self.xmlinfo.vmname))
+
         self.vgpuuuid = None
         if self.xmlinfo.hostdev:
             vmlog.info('{}:{}:{}'.format(self.xmlinfo.vmname, self.xmlinfo.mdev_type, self.xmlinfo.mdev_placement))
